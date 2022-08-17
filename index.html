@@ -14,12 +14,15 @@
     <script>
         fetch("https://ci-swapi.herokuapp.com/api/films")
             .then(response => response.json())
-            .then(data => {
-                document.getElementById("content").innerText = data.results[0].title;
-            })
+            .then(data => displayData(data))
             .catch((e) => {
                 console.error("Error:", e);
-            })
+            });
+
+            function displayData(data){
+                document.getElementById("content").innerText = data.results[0].title;
+            };
+
     </script>
 </body>
 
